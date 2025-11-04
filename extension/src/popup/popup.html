@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP Context Bridge</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔗 MCP Context Bridge</h1>
+      <p class="subtitle">Shared memory across LLMs</p>
+    </header>
+
+    <div id="status" class="status">
+      <div class="status-indicator" id="serverStatus"></div>
+      <span id="statusText">Checking server...</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-label">Contexts</div>
+        <div class="stat-value" id="contextCount">-</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Tokens</div>
+        <div class="stat-value" id="tokenCount">-</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Current LLM</div>
+        <div class="stat-value" id="currentLLM">-</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="saveBtn" class="btn btn-primary">💾 Save Conversation</button>
+      <button id="refreshBtn" class="btn btn-secondary">🔄 Refresh Stats</button>
+    </div>
+
+    <div class="settings">
+      <h3>Settings</h3>
+      <div class="setting-item">
+        <label for="serverUrl">Server URL</label>
+        <input type="text" id="serverUrl" value="http://localhost:3000" />
+      </div>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="autoInject" checked />
+          Auto-inject context
+        </label>
+      </div>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="showNotifications" checked />
+          Show notifications
+        </label>
+      </div>
+      <button id="saveSettings" class="btn btn-secondary">Save Settings</button>
+    </div>
+
+    <footer>
+      <a href="https://github.com/anthropics/mcp" target="_blank">MCP Docs</a>
+      <span>•</span>
+      <span id="version">v1.0.0</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
